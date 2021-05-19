@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat-App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+    <style>
+    body {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    #message-container {
+      width: 80%;
+      max-width: 1200px;
+    }
+
+    #message-container div {
+      background-image: linear-gradient(to right,rgb(56, 3, 43), rgb(117, 252, 146));
+      color: blanchedalmond;
+      padding: 5px 5px 5px 5px;
+    }
+
+    #message-container div:nth-child(2n) {
+      background-image: linear-gradient(to right, rgba(4, 52, 66, 0.966), rgb(183, 215, 221));
+      color: burlywood;
+    }
+
+    #send-container {
+      position: fixed;
+      padding-bottom: 30px;
+      bottom: 0;
+      background-color: white;
+      max-width: 1200px;
+      width: 80%;
+      display: flex;
+    }
+
+    #message-input {
+      flex-grow: 1;
+    }
+      </style>
+</head>
+<body>
+    <div id="message-container"></div>
+    <form id="send-container">
+      <input autocomplete="off" type="text" id="message-input" />
+      <button class="btn btn-info" type="submit" id="send-button">Send</button>
+    </form>
+</body>
+</html>
